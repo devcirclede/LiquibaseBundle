@@ -1,0 +1,2 @@
+# LiquibaseBundle
+LiquibaseBundle for Symfony
