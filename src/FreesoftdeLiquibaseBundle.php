@@ -7,4 +7,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class FreesoftdeLiquibaseBundle extends Bundle {
 
+    public function getPath() {
+        return dirname(__DIR__);
+    }
 }
