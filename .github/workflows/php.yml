@@ -35,5 +35,12 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
       - name: Install Composer dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
-      - name: RUN Tests
+      - name: RUN Linter
+        uses: overtrue/phplint@${{ matrix.php-versions }}
+        with:
+          path: .
+          options: --exclude=*.log
+      - name: RUN CodeStyle Check
+        run: composer codestyle
+      - name: RUN Unit Tests
         run: composer unit

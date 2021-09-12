@@ -31,6 +31,7 @@
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
-        "unit": "vendor/bin/phpunit -c phpunit.dist.xml --debug -vv"
+        "unit": "vendor/bin/phpunit -c phpunit.dist.xml --debug -vv",
+        "codestyle": "vendor/bin/phpcs --standard=PSR12 --report-junit=tests/_out/phpcs-report.xml src"
     }
 }
