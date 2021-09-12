@@ -31,6 +31,6 @@
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
-        "unit": "vendor/bin/phpunit --debug -vv"
+        "unit": "vendor/bin/phpunit -c phpunit.dist.xml --debug -vv"
     }
 }
