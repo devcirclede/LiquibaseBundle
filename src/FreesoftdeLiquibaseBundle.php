@@ -5,9 +5,11 @@ namespace Freesoftde\LiquibaseBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class FreesoftdeLiquibaseBundle extends Bundle {
+class FreesoftdeLiquibaseBundle extends Bundle
+{
 
-    public function getPath() {
+    public function getPath()
+    {
         return dirname(__DIR__);
     }
 }

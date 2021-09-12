@@ -8,6 +8,11 @@
             "Freesoftde\\LiquibaseBundle\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Freesoftde\\LiquibaseBundle\\Test\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "vansari",
@@ -16,9 +21,16 @@
     ],
     "require": {
         "php": ">=7.3 <=9.0",
-        "symfony/framework-bundle": "^5.3"
+        "symfony/framework-bundle": "^5.3",
+        "symfony/console": "^5.3",
+        "ext-curl": "*"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "unit": "vendor/bin/phpunit -c phpunit.xml --debug -vv"
     }
 }
