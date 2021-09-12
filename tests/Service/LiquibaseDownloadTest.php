@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Freesoftde\LiquibaseBundle\Test\Service;
 
 use Freesoftde\LiquibaseBundle\Service\LiquibaseDownload;
@@ -12,7 +14,8 @@ use RuntimeException;
  */
 class LiquibaseDownloadTest extends TestCase
 {
-    public function providerDownloadWrongPatterns() {
+    public function providerDownloadWrongPatterns()
+    {
         return [
             [
                 'v2.3.4',
@@ -27,9 +30,9 @@ class LiquibaseDownloadTest extends TestCase
     }
 
     /**
-     * @covers ::download
+     * @covers       ::download
      * @dataProvider providerDownloadWrongPatterns
-     * @param string $wrongPattern
+     * @param        string $wrongPattern
      */
     public function testDownloadFailedWithWrongVersionPattern(string $wrongPattern): void
     {
