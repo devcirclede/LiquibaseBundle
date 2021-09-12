@@ -5,7 +5,7 @@
          cacheResultFile=".phpunit.cache/test-results"
          executionOrder="depends,defects"
          forceCoversAnnotation="true"
-         beStrictAboutCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="false"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
          failOnRisky="true"
@@ -22,5 +22,11 @@
         <include>
             <directory suffix=".php">src</directory>
         </include>
+        <report>
+            <clover outputFile="tests/_out/clover.xml"/>
+        </report>
     </coverage>
+    <logging>
+        <junit outputFile="tests/_out/phpunit-report.xml"/>
+    </logging>
 </phpunit>

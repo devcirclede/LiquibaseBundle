@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Freesoftde\LiquibaseBundle\Test\Service;
 
@@ -30,7 +30,7 @@ class LiquibaseDownloadTest extends TestCase
     }
 
     /**
-     * @covers       ::download
+     * @covers ::download
      * @dataProvider providerDownloadWrongPatterns
      * @param        string $wrongPattern
      */

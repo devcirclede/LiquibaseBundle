@@ -12,6 +12,11 @@ class LiquibaseDownload
 
     private const LIQUIBASE_URL = 'https://github.com/liquibase/liquibase/releases/tag/v%1$s/liquibase-%1$s.jar';
 
+    /**
+     * @param  string $version
+     * @param  string $path
+     * @return bool
+     */
     public function download(string $version, string $path): bool
     {
         if (empty($version) || !preg_match('/^\d+\.\d+\.\d+$/', $version)) {
@@ -21,7 +26,7 @@ class LiquibaseDownload
             throw new RuntimeException(sprintf('Directory "%s" does not exist.', $path));
         }
         $versionPath = $path . $version . DIRECTORY_SEPARATOR;
-        if (!mkdir($versionPath) && !is_dir($versionPath)) {
+        if (!is_dir($versionPath) && !mkdir($versionPath) && !is_dir($versionPath)) {
             throw new \RuntimeException(sprintf('Directory "%s" was not created', $versionPath));
         }
         $destination = $versionPath . 'liquibase.jar';
@@ -37,8 +42,9 @@ class LiquibaseDownload
      * @param  string $destination
      * @param  string $url
      * @return int
+     * @codeCoverageIgnore
      */
-    public function saveLiquibaseJar(string $destination, string $url): int
+    protected function saveLiquibaseJar(string $destination, string $url): int
     {
         $fh = fopen($destination, 'wb');
         $ch = curl_init($url);
