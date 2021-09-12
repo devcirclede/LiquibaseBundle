@@ -39,9 +39,9 @@ class LiquibaseDownload
     }
 
     /**
-     * @param  string $destination
-     * @param  string $url
-     * @return int
+     * @param              string $destination
+     * @param              string $url
+     * @return             int
      * @codeCoverageIgnore
      */
     protected function saveLiquibaseJar(string $destination, string $url): int

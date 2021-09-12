@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace Freesoftde\LiquibaseBundle\DependencyInjection;
 
@@ -13,7 +14,5 @@ class FreesoftdeLiquibaseExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        
-        
     }
 }

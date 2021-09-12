@@ -16,7 +16,6 @@ class LiquibaseInitCommand extends Command
 
     protected function configure()
     {
-        
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
